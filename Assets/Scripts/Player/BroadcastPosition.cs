@@ -25,7 +25,8 @@ public class BroadcastPosition : MonoBehaviour
             return;
         else
         {
-            coordinates = new Vector3(rb.position.x, rb.position.y, rb.position.z);
+            //coordinates = new Vector3(rb.position.x, rb.position.y, rb.position.z);
+            coordinates = transform.position;
             gameEvent.Raise(this, coordinates);
         }
     }

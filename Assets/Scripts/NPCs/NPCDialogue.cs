@@ -31,9 +31,10 @@ public class NPCDialogue : MonoBehaviour
         dialogueIsPlaying = false;
         currentStory = new Story(inkJSON.text);
     }
-    public void sendText(Component sender, object data)
+    //public void sendText(Component sender, object data)
+    public void sendText()
     {
-        if (data.Equals(true) && npcBase.Id == id)
+        if (npcBase.Id == id)
         {
             dialogueIsPlaying = true;
             ContinueStory();

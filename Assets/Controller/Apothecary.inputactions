@@ -37,9 +37,18 @@
                     "type": "Value",
                     "id": "2e9ebebc-62b5-47d4-8233-a5958d1c49ce",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.3,y=0.15)",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "bce40348-bb40-4b94-a965-7b471467e40e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -231,17 +240,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "ef390fae-d590-4498-bcf6-3cbaf750e2e0",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "UpDownVec",
                     "id": "43861c84-9cc6-4ac5-b6cd-9e36a23f6abe",
                     "path": "1DAxis",
@@ -282,6 +280,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ca65888-4448-42d8-81f5-64ddf31ebda6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
