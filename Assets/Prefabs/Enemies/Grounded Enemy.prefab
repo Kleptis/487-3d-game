@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7596759780517240313}
   - component: {fileID: 7596759780517240315}
   m_Layer: 0
-  m_Name: Enemy(for now)
+  m_Name: Grounded Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,11 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7596759780517240307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31878ffad6e6cae4fb9c079c18470574, type: 3}
+  m_Script: {fileID: 11500000, guid: 53c47d2afdee25d42a4be4ccb8e51aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameobject: {fileID: 7596759780517240307}
-  moveSpeed: 6.75
+  moveSpeed: 7.74
   canMove: 0
   agent: {fileID: 7596759780517240069}
 --- !u!54 &7596759780517240313

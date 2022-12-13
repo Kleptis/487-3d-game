@@ -3,55 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveToPlayer : MonoBehaviour
+public abstract class MoveToPlayer : MonoBehaviour
 {
     [SerializeField] GameObject gameobject;
-    Rigidbody rb;
     private Vector3 final_position;
+    public Vector3 _final_position { get { return final_position; } set { final_position = value; }}
     private Vector3 initial_position;
+    //public Vector3 _initial_position { get { return initial_position; } set { initial_position = value; } }
     private Vector3 direction;
-    [SerializeField] private float moveSpeed;
-    public bool canMove;
+    public Vector3 _direction { get { return direction; } set { direction = value; } }
 
-    public NavMeshAgent agent;
+    [SerializeField] private float moveSpeed;
+    public float _moveSpeed { get { return moveSpeed; } }
+    
+    public bool canMove;
     Ray ray;
+
     void Start()
     {
-        rb = gameobject.GetComponent<Rigidbody>();
         canMove = false;
         final_position = new Vector3();
         initial_position = new Vector3();
-        direction = new Vector3();
+        direction = new Vector3();                                       
         //Physics.Raycast(V3 origin, V3 direction, RaycastHit hitInfo,
         //(optional) float distance, (optional) int LayerMask);
         
     }
-    private void FixedUpdate()
-    {
-        initial_position = new Vector3 (rb.position.x, rb.position.y, rb.position.z);
-    }
-
-
-    // Update is called once per frame
-    //private void MoveGameObject()
-    //{
-    //    rb.velocity = new Vector3(final_position.x * moveSpeed, final_position.y * moveSpeed, final_position.z * moveSpeed);
-    //}
     public void Listener(Component sender, object data)
     {
         final_position = (Vector3)data;
-        direction = (final_position - initial_position);
+        direction = (final_position - transform.position);
         direction.Normalize();
         direction *= moveSpeed;
         RaycastHit hit;
         ray = new Ray(initial_position, direction);
         if(Physics.Raycast(ray,out hit))
         {
-            agent.SetDestination(hit.point);
+            RayCastHitAction(hit);
         }
         //rb.velocity = direction;
     }
     //Physics.Raycast(V3 origin, V3 direction, RaycastHit hitInfo,
-        //(optional) float distance, (optional) int LayerMask);
-      
+    //(optional) float distance, (optional) int LayerMask);
+    public abstract void RayCastHitAction(RaycastHit hit);
+
+    
 } 
+
