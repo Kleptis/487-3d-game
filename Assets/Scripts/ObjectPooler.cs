@@ -47,16 +47,21 @@ public class ObjectPooler : MonoBehaviour
     {
         for (int i = 0; i < poolDictionary[tag].Count; i++)
         {
+            if (!poolDictionary.ContainsKey(tag))
+            {
+                Debug.LogWarning("Pool with tag " + tag + "dn exist.");
+                return null;
+            }
             GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
-            if (objectToSpawn.activeInHierarchy)
+            if (objectToSpawn.activeInHierarchy)//check why this is added
             {
                 continue;
             }
-            objectToSpawn.transform.position = position;
             objectToSpawn.SetActive(true);
+            objectToSpawn.transform.position = position;
             
-            poolDictionary[tag].Enqueue(objectToSpawn);
+            poolDictionary[tag].Enqueue(objectToSpawn);//add back to queue so it can be used later
 
             return objectToSpawn;
         }
