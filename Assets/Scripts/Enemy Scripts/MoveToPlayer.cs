@@ -36,7 +36,7 @@ public abstract class MoveToPlayer : MonoBehaviour
         direction.Normalize();
         direction *= moveSpeed;
         RaycastHit hit;
-        ray = new Ray(initial_position, direction);
+        ray = new Ray(transform.position, direction);
         if(Physics.Raycast(ray,out hit))
         {
             RayCastHitAction(hit);

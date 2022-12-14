@@ -17,9 +17,16 @@ public class MenuBase : MonoBehaviour
     {
         //Debug.Log(pausePanel.activeInHierarchy);
         if (click_count == 0)
+        {
+            Time.timeScale = 0f;
             showpanel();
+
+        }
         else if (menuPanel.activeInHierarchy == true && click_count != 0)
+        {
+            Time.timeScale = 1f;
             hidepanel();
+        }
     }
     public void showpanel()
     {
