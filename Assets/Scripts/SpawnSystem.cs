@@ -14,6 +14,7 @@ public class SpawnSystem : MonoBehaviour
     private List<int[]> spawnPoints = new List<int[]>();
     private List<int[]> initialSpawns = new List<int[]>();
     [SerializeField] private Mesh[] kanjiMeshList;
+    private Mesh kanjiMesh;
 
     ObjectPooler objectPooler;
 
@@ -57,13 +58,17 @@ public class SpawnSystem : MonoBehaviour
             spawnPoint = spawnPoints[Random.Range(0, 9)];
             spawn = new Vector3(spawnPoint[0], 0, spawnPoint[1]);
         }
-        objectPooler.SpawnFromPool(groundedTag, spawn);
+
+        kanjiMesh = kanjiMeshList[Random.Range(0, kanjiMeshList.Length)];
+        objectPooler.SpawnFromPool(groundedTag, spawn, kanjiMesh);
+        
         Debug.Log("Grounded Spawned");
 
         yield return new WaitForSeconds(5f);
         spawnPoint = spawnPoints[Random.Range(0, 9)];
         spawn = new Vector3(spawnPoint[0], 12, spawnPoint[1]);
-        objectPooler.SpawnFromPool(flyingTag, spawn);
+        kanjiMesh = kanjiMeshList[Random.Range(0, kanjiMeshList.Length)];
+        objectPooler.SpawnFromPool(flyingTag, spawn, kanjiMesh);
         Debug.Log("Flying Spawned");
 
         StartCoroutine(SpawnTimer());

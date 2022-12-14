@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b6dec9e19285fe0419d6984cc7df172a, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 4632107af1bca994a85ad374ca42a1c4, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -3346,6 +3346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1756188737}
+  kanjiMeshList:
+  - {fileID: 3823192012521318642, guid: 0a0381f957a4bc4428b50617c3d631cc, type: 3}
+  - {fileID: 1186336913602380063, guid: 7f8da219a2a8e6344bc8e289a8736058, type: 3}
 --- !u!4 &1612850545
 Transform:
   m_ObjectHideFlags: 0

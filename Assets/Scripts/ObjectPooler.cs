@@ -43,7 +43,7 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
-    public GameObject SpawnFromPool(string tag, Vector3 position)
+    public GameObject SpawnFromPool(string tag, Vector3 position, Mesh kanjiMesh)
     {
         for (int i = 0; i < poolDictionary[tag].Count; i++)
         {
@@ -58,8 +58,9 @@ public class ObjectPooler : MonoBehaviour
             {
                 continue;
             }
-            objectToSpawn.SetActive(true);
+            //objectToSpawn.
             objectToSpawn.transform.position = position;
+            objectToSpawn.SetActive(true);
             
             poolDictionary[tag].Enqueue(objectToSpawn);//add back to queue so it can be used later
 
