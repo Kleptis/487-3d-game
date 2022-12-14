@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class gmNew : MonoBehaviour
 {
+    private const int ENEMY_COUNT = 20;
+
     // Start is called before the first frame update\
     public static gmNew Instance;
     public static int enemyCount;
@@ -26,7 +28,7 @@ public class gmNew : MonoBehaviour
     void Start()
     {
         
-        enemyCount = 5;
+        enemyCount = ENEMY_COUNT;
     }
 
     // Update is called once per frame
