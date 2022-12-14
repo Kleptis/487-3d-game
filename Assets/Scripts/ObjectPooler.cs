@@ -58,7 +58,8 @@ public class ObjectPooler : MonoBehaviour
             {
                 continue;
             }
-            //objectToSpawn.
+            MeshFilter textMesh = objectToSpawn.transform.Find("visual").gameObject.GetComponent<MeshFilter>();
+            textMesh.mesh = kanjiMesh;
             objectToSpawn.transform.position = position;
             objectToSpawn.SetActive(true);
             

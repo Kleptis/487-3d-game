@@ -33,7 +33,8 @@ public class SpawnSystem : MonoBehaviour
         int j = spawnList.Count;
         int[] spawnPoint = spawnList[Random.Range(0, j)];
         Vector3 position = new Vector3(spawnPoint[0], yPos, spawnPoint[1]);
-        objectPooler.SpawnFromPool(tag, position);
+        kanjiMesh = kanjiMeshList[Random.Range(0, kanjiMeshList.Length)];
+        objectPooler.SpawnFromPool(tag, position, kanjiMesh);
         spawnList.Remove(spawnPoint);
         }
     }
