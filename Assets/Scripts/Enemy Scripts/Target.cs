@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-     public float health = 50f;
+     private const float FULL_HEALTH = 50f;
+     public GameEvent targetKilled;
+     public float health = FULL_HEALTH;
 
      public void TakeDamage (float amount)
      {
@@ -15,6 +17,8 @@ public class Target : MonoBehaviour
 
      void Die()
      {
-          Destroy(gameObject);
+        targetKilled.Raise();
+        gameObject.SetActive(false);
+        health = FULL_HEALTH;
      }
 }

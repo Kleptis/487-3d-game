@@ -56,7 +56,6 @@ public class InputManager : MonoBehaviour
     public bool PlayerPaused()
     {
         return playerControls.UI.Cancel.triggered;
-
     }
 
     void Update()
