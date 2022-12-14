@@ -13,6 +13,8 @@ public class SpawnSystem : MonoBehaviour
     private string flyingTag = "flyingEnemy";
     private List<int[]> spawnPoints = new List<int[]>();
     private List<int[]> initialSpawns = new List<int[]>();
+    [SerializeField] private Mesh[] kanjiMeshList;
+
     ObjectPooler objectPooler;
 
     // Start is called before the first frame update
